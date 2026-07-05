@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
             System.out.println("Welcome to Console Bank");
@@ -19,8 +19,26 @@ public class Main {
                     0) Exit
                     """);
             System.out.print("Enter your choice: ");
-            String choice = input.nextLine().trim();
+            String choice = scanner.nextLine().trim();
             System.out.println("Your choice is: " + choice);
+
+            switch (choice) {
+                case "1" -> operAccount(scanner);
+                case "2" -> deposit(scanner);
+                case "3" -> withdraw(scanner);
+                case "4" -> transfer(scanner);
+                case "5" -> statement(scanner);
+                case "6" -> listAccount(scanner);
+                case "7" -> searchAccount(scanner);
+                case "0" -> running = false;
+            }
         }
     }
+    private static void operAccount(Scanner scanner) {}
+    private static void deposit(Scanner scanner) {}
+    private static void withdraw(Scanner scanner) {}
+    private static void transfer(Scanner scanner) {}
+    private static void statement(Scanner scanner) {}
+    private static void listAccount(Scanner scanner) {}
+    private static void searchAccount(Scanner scanner) {}
 }
