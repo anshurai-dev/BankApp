@@ -3,8 +3,7 @@ package repository;
 import domain.Account;
 import service.BankService;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class AccountRepository {
     private final Map<String, Account> accountsByNumber = new HashMap<>();
@@ -13,4 +12,8 @@ public class AccountRepository {
         accountsByNumber.put(account.getAccountNumber(),account);
     }
 
+    public List<Account> findAll() {
+        return new ArrayList<>(accountsByNumber.values());
+
+    }
 }
